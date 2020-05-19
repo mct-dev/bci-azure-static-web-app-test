@@ -11,7 +11,7 @@ namespace api
 {
     public static class ProductsGet
     {
-        [FunctionName("products_get")]
+        [FunctionName("ProductsGet")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "products")] HttpRequest req,
             ILogger log)
@@ -22,7 +22,7 @@ namespace api
 
             var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data = JsonConvert.DeserializeObject(requestBody);
-            name ??= data?.name;
+            name = name ?? data?.name;
 
             var responseMessage = string.IsNullOrEmpty(name)
                 ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
