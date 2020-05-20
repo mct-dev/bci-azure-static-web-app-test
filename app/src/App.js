@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <button style={{ padding: '10px'; fontSize: '20px'; }} onClick={fetchIt}>Get Api Response From Azure Function</button>
+        <button style={{ padding: '10px', fontSize: '20px' }} onClick={fetchIt}>Get Api Response From Azure Function</button>
         <p>
           API response: {json}
         </p>
