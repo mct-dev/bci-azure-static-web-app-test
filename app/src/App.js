@@ -8,25 +8,16 @@ function App() {
     const result = await fetch('/api/products')
     const data = await result.text()
     console.log(data)
-    setJson(JSON.stringify(json))
+    setJson(data)
   }
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <button onClick={fetchIt}>Get Api Response From Azure Function</button>
+        <button style={{ padding: '10px'; fontSize: '20px'; }} onClick={fetchIt}>Get Api Response From Azure Function</button>
         <p>
           API response: {json}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
