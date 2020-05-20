@@ -15,11 +15,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <button onClick={fetchIt}>Get Api Response From Azure Function</button>
         <p>
-          json from Azure API:
-        </p>
-        <p>
-          {json}
+          API response: {json}
         </p>
         <a
           className="App-link"
