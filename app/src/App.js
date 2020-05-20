@@ -6,8 +6,7 @@ function App() {
   const [name, setName] = React.useState('')
 
   const fetchIt = async () => {
-    const stateName = name
-    const result = await fetch('/api/products', { method: 'POST', data: { name: stateName }})
+    const result = await fetch(`/api/products?name=${name}`)
     const data = await result.text()
     console.log(data)
     setData(data)
