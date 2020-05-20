@@ -3,12 +3,23 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [json, setJson] = React.useState('')
+  const fetchIt = async () => {
+    const result = await fetch('/api/products')
+    const data = await result.text()
+    console.log(data)
+    setJson(JSON.stringify(json))
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          json from Azure API:
+        </p>
+        <p>
+          {json}
         </p>
         <a
           className="App-link"
